@@ -33,7 +33,7 @@ export class TxSender {
     timeoutSec: number,
     transactionRequest: TransactionRequest = {}
   ): Promise<TransactionReceipt> {
-    console.log(`[${this.chainId}] submitting tx`);
+    console.log(`[${this.chainId}] submitting tx. latest version`);
 
     const gasEstimation = await GasEstimator.apply(this.wallet.provider, minGasPrice, maxGasPrice);
     const { gasPrice, maxPriorityFeePerGas, maxFeePerGas, isTxType2 } = gasEstimation;

@@ -54,6 +54,8 @@ export class GasEstimator {
     const isTxType2 = Boolean(block.baseFeePerGas);
     const transactions = block.transactions.filter(GasEstimator.containsGasPrice);
 
+    console.log(`[arbitrum] transactions ${JSON.stringify(transactions)}`);
+
     if (transactions.length === 0) {
       return [{ min: 0, max: 0, avg: 0, baseFeePerGas: 0, gasPrice: 0, isTxType2 }, [], []];
     }
